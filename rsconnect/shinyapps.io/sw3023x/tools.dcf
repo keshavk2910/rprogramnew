@@ -1,0 +1,12 @@
+name: tools
+title: tools
+username:
+account: sw3023x
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 736259
+bundleId: 1895341
+url: https://sw3023x.shinyapps.io/tools/
+when: 1550992861.80742
+asMultiple: FALSE
+asStatic: FALSE
