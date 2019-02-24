@@ -21,10 +21,10 @@ fluidPage(id='fluidPage_top_id',
     ), 
     tabPanel("Documents"),
     tabPanel("Classes"),    
-     navbarMenu("Log in",
-      tabPanel("Log in",
-               tags$div(tags$img(src = "/ids-height-80.png", class="pull-center"), id = "login_logo", class="row text-center"
-               ),
+	   tabPanel("Account",
+	    tabsetPanel(
+	     tabPanel("Login",
+	              fluidPage(
                tags$a(href="#", "Login", class="active"),
                tags$hr(),
                textInput("username", NULL,placeholder = "Username"),
@@ -32,10 +32,10 @@ fluidPage(id='fluidPage_top_id',
                actionButton("log_in", "Log In", class="login-btn"),
                actionLink("no_account", "No Account? Register"),
                actionLink("forgot_pass", "Forgot Password?")
+	              )
       ),
       tabPanel("Register",
-               tags$div(tags$img(src = "/ids-height-80.png", class="pull-center"), id = "login_logo", class="row text-center"
-               ),
+               fluidPage(
         tags$a(href="#", "Create Account", class="active"),
         tags$hr(),
         textInput("username", NULL,placeholder = "Username"),
@@ -50,24 +50,29 @@ fluidPage(id='fluidPage_top_id',
         uiOutput("humansOnly"),
         actionButton("register_now", "Register Now", class="register-btn"),
         actionLink("back_login", "Back lo Login")
+               )
       ),
       tabPanel("Forgot Password?",
-      tags$div(tags$img(src = "/ids-height-80.png", class="pull-center"), id = "login_logo", class="row text-center"
-      ),
+               fluidPage(
       tags$a(href="#", "Password Recovery", class="active"),
       tags$hr(),
       textInput("username_rec", NULL,placeholder = "Username (case Sensitive"),
       textInput("useremail_rec", NULL,placeholder = "Email Address"),
       actionButton("pass_recbtn", "Reset Password", class="register-btn"),
                tags$a(href="#tab-9672-1", "Back lo Login", class="active")
+               )
       ),
-      tabPanel("Admin"),
+      tabPanel("Admin",
       HTML('<a href="http://curriculum.idsucla.org/" target="_blank">Curriculum</a>'),
+      tags$p(),
       HTML('<a href="#" id="passchange-trigger">Change Password</a>'),
+      tags$p(),
       HTML('<a href="#" id="accountd-trigger">Account Details</a>'),
+      tags$p(),
       HTML('<a href="#" id="resetr-trigger">Resetting RStudio</a>'),
-  	   tabPanel("Log out")
-     ),
+  	   tabPanel("Log out"))
+	    )
+	   ),
 	  navbarMenu("Help",
 	             HTML('<a href="https://ids-wiki.mobilizingcs.org" target="_blank">WIKI</a>'),
 	             HTML('<a href="#" id="contact-trigger">Contact</a>')
